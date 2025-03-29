@@ -8,6 +8,7 @@ import lk.ac.vau.fas.myapp.model.Student;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -105,6 +106,15 @@ public class AppController {
         return null;
     }
     //Delete
-    
+    @DeleteMapping("/student/delete/{regno}")
+    public String deleteStudent(@PathVariable("regno") String regNo) {
+        for (Student student : students) {
+            if (student.getRegNo().equals(regNo)) {
+                students.remove(student);
+                return "Student with regNo " + regNo + " has been deleted."; 
+            }
+        }
+        return "Student with regNo " + regNo + " not found."; 
+    }
 
 }
