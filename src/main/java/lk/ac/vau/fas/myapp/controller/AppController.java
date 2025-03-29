@@ -46,5 +46,14 @@ public class AppController {
 		students.add(Nimal);
 		return students;
 	}
+    //find a student from the list by regno
+    @GetMapping("/student/{id}")
+	public Student getStudent(@PathVariable("id") String regno) {
+		for(Student student : students) {
+			if(student.getRegNo().equals(regno)) {
+				return student;
+			}
+		}	
+		return null;
     
 }
