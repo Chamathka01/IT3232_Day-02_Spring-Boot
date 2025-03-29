@@ -2,11 +2,13 @@
 
 # Spring Boot REST Controller & Student Management System
 
+## 📖 Introduction
+
 This project demonstrates a simple Spring Boot REST controller with two endpoints that return text messages.
 
 The Student Management System is a simple RESTful web application built using Spring Boot. It allows users to perform CRUD operations (Create, Read, Update, Delete) on student data. The application also provides some additional features like filtering students by age, sorting students by GPA, and displaying student details.
 
-## Code Structure
+##  📂 Code Structure
 
 ```java
 package lk.ac.vau.fas.ict.controller;
@@ -192,7 +194,7 @@ public class Student {
 
 ```
 
-## Code Explanation & How to run
+## 📝 Code Explanation &  🚀 How to run
 1. **`@RestController`**:
    - Marks the `AppController` class as a REST controller that handles HTTP requests.
 2. **`@RequestMapping("/app")`**:
@@ -237,7 +239,7 @@ public class Student {
     - **`@DeleteMapping("/student/delete/{regno}")`**:Deletes a student by their registration number when accessed at `/app/student/delete/{regno}`. For example,     to delete Bob Marely, access `/app/student/delete/2020IT01`.Example response:
      Student with regNo 2020IT01 has been deleted.
 
-## Output Screenshots
+## 📈  Output Screenshots
 ### 1. `/app/msg` Endpoint Output:
 ![Hello SpringBoot](./Screenshots/one.png)
 
@@ -245,33 +247,33 @@ public class Student {
 ![My name is SpringBoot](./Screenshots/two.png)
 
 ### 3. `/age/{ag}` Endpoint Output:
-![](./Screenshots/three.png)
+![three](./three.png)
 
 ### 4. `/app/student` Endpoint Output:
-![](./Screenshots/four.png)
+![four](./four.png)
 
 ### 5. `/app/students` Endpoint Output:
-![](./Screenshots/five.png)
+![five](./five.png)
 
 ### 6. `/app/student/{id}` Endpoint Output:
-![](./Screenshots/six.png)
+![six](./six.png)
 
 ### 7. `/app/students/age` Endpoint Output:
-![](./Screenshots/seven.png)
+![seven](./seven.png)
 
 ### 8. `/app/order/all-students` Endpoint Output:
-![](./Screenshots/eight.png)
+![eight](./eight.png)
 
 ### 9. `/app/students` Endpoint Output:
-![](./Screenshots/nine.png)
+![post](./nine.png)
 
 ### 10. `/app/student/update/{regno}` Endpoint Output:
-![](./Screenshots/ten.png)
+![put](./ten.png)
 
 ### 11. `/app/student/delete/{regno}` Endpoint Output:
-![](./Screenshots/elevan.png)
+![delete](./elevan.png)
 
-## Technologies
+## ⚙️ Technologies
 - Java: The core programming language used.
 
 - Spring Boot: Framework for creating REST APIs.
@@ -280,7 +282,7 @@ public class Student {
 
 - Maven: For project management and dependency management.
 
-## Features
+## 🌟 Features
 - RESTful Endpoints: Two endpoints (/app/msg and /app/name) for handling GET requests.
 
 - Lightweight Web Server: Uses Spring Boot's embedded Tomcat server.
@@ -296,7 +298,7 @@ public class Student {
 - Update student details: Modify an existing student's details using their registration number.
 - Delete a student: Remove a student from the system using their registration number.
 
-## Summary
+##  📜 Summary
 This showcases how to create and run a simple Spring Boot REST API with basic text responses. It demonstrates the use of annotations like `@RestController`, `@RequestMapping`, and `@GetMapping`.
 
 This API provides functionality to manage student records, including retrieving student information, adding new students, updating existing records, and deleting students. It also includes features for filtering and sorting student data based on specific criteria like age and GPA.
