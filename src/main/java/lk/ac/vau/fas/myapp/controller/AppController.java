@@ -21,6 +21,12 @@ public class AppController {
 	Student Nimal = new Student("2020IT03","Nimal Hettiarachchi",22,"IT",3.0);
     List<Student> students = new ArrayList<Student>();
 
+    public AppController() {
+        students.add(Bob);
+        students.add(Amal);
+        students.add(Nimal);
+    }
+
     @GetMapping("msg")
     public String myMessage() {
         return "Hello SpringBoot";
@@ -48,12 +54,25 @@ public class AppController {
 	}
     //find a student from the list by regno
     @GetMapping("/student/{id}")
-	public Student getStudent(@PathVariable("id") String regno) {
+	public Student getStudent(@PathVariable("id") String regNo) {
 		for(Student student : students) {
-			if(student.getRegNo().equals(regno)) {
+			if(student.getRegNo().equals(regNo)) {
 				return student;
 			}
 		}	
 		return null;
-    
+    }
+    //find the students whose age is between 20 and 23
+    @GetMapping("/students/age")
+    public List<Student> getStudentsByAgeRange() {
+    List<Student> filteredStudents = new ArrayList<>();
+    for (Student student : students) {
+        if (student.getAge() >= 20 && student.getAge() <= 23) {
+            filteredStudents.add(student);
+        }
+    }
+    return filteredStudents;
+}
+
+
 }
