@@ -29,5 +29,10 @@ public class AppController {
 	public String MyAge(@PathVariable("ag") int age) {
 		return "My age is "+age;
 	}
+    //a method to return a student
+    @GetMapping("/student")
+	public Student getStudent() {
+		return Nimal;
+	}
     
 }
