@@ -6,8 +6,10 @@ import org.springframework.web.bind.annotation.RestController;
 import lk.ac.vau.fas.myapp.model.Student;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
+import org.apache.logging.log4j.util.PropertySource.Comparator;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -73,6 +75,10 @@ public class AppController {
     }
     return filteredStudents;
 }
-
-
+    //sort the students by their GPA
+    @GetMapping("/order/all-students")
+    public List<Student> getAllStudents() {
+        students.sort((s1, s2) -> Double.compare(s2.getGpa(), s1.getGpa())); 
+        return students;
+    }
 }
